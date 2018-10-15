@@ -29,9 +29,9 @@ else:
 class batch_norm(object):
 	def __init__(self, epsilon=1e-5, momentum = 0.9, name="batch_norm"):
 		with tf.variable_scope(name):
-      self.epsilon  = epsilon
-      self.momentum = momentum
-      self.name = name
+			self.epsilon  = epsilon
+			self.momentum = momentum
+			self.name = name
 
 	def __call__(self, x, train=True):
 		return tf.contrib.layers.batch_norm(x,
@@ -60,7 +60,7 @@ def conv2d(input_, output_dim,
 		biases = tf.get_variable('biases', [output_dim], initializer=tf.constant_initializer(0.0))
 		conv = tf.reshape(tf.nn.bias_add(conv, biases), conv.get_shape())
 
-    return conv
+	return conv
 
 def deconv2d(input_, output_shape,
 		k_h=5, k_w=5, d_h=2, d_w=2, stddev=0.02,
